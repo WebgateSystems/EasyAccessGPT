@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EasyAccessGpt
   class Communication < Request
     def initialize(message)

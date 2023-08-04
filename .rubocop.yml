@@ -8,5 +8,9 @@ Metrics/BlockLength:
     Exclude:
     - 'spec/**/*.rb'
 
+Lint/DuplicateMethods:
+    Exclude:
+    - 'lib/**/configure.rb'
+
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']

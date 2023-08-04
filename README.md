@@ -96,3 +96,10 @@ request: EasyAccessGpt::Translation.new('hello').call
 
 response: {"message_include_profanity"=>false}
 ```
+
+```bash
+request: EasyAccessGpt::Translation.new('text include bad words').call
+
+response: {"message_include_profanity"=>true}
+```
+

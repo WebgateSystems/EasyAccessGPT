@@ -22,14 +22,14 @@ RSpec.describe EasyAccessGpt::Communication do
   end
 
   context 'when run communication with token' do
-    let(:content) { 'Hello! How can I assist you today?'}
+    let(:content) { 'Hello! How can I assist you today?' }
     let(:mock_answer) { { 'choices' => [{ 'message' => { 'content' => content } }] } }
     before do
       allow_any_instance_of(EasyAccessGpt::Request).to receive(:chat).and_return(mock_answer)
     end
 
     it 'is return operation success' do
-      expect(communication.new('hello').call).to eq( 'Hello! How can I assist you today?' )
+      expect(communication.new('hello').call).to eq('Hello! How can I assist you today?')
     end
   end
 end
