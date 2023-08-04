@@ -92,14 +92,13 @@ EasyAccessGpt::Filter.new({body: 'your message'}).call
 Usage excample: 
 
 ``` ruby
-request: EasyAccessGpt::Translation.new('hello').call
+request: EasyAccessGpt::Filter.new('hello').call
 
 response: {"message_include_profanity"=>false}
 ```
 
-```bash
-request: EasyAccessGpt::Translation.new('text include bad words').call
+```ruby
+request: EasyAccessGpt::Filter.new('text include bad words').call
 
 response: {"message_include_profanity"=>true}
 ```
-
