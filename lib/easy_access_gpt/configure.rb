@@ -3,14 +3,14 @@
 module EasyAccessGpt
   class Configure
     class << self
-      attr_accessor :api_key
+      attr_accessor :api_key, :gpt_model, :available_locales
 
-      def gpt_model(name = Constants::DEFAULT_GPT_MODEL)
-        @gpt_model ||= name
+      def gpt_model
+        @gpt_model ||= Constants::DEFAULT_GPT_MODEL
       end
 
-      def available_locales(locales = Constants::DEFAULT_LOCALES)
-        @available_locales ||= locales
+      def available_locales
+        @available_locales ||= Constants::DEFAULT_LOCALES
       end
     end
   end
