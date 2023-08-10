@@ -19,7 +19,7 @@ module EasyAccessGpt
       {
         model: EasyAccessGpt::Configure.gpt_model,
         messages: [settings_chat, settings_message],
-        max_tokens: 3000
+        max_tokens: EasyAccessGpt::Configure.max_tokens
       }
     end
 

@@ -8,11 +8,12 @@ module EasyAccessGpt
 
     def initialize(body)
       @api_key = EasyAccessGpt::Configure.api_key
+      @model_url = EasyAccessGpt::Configure.model_url
       @body = body
     end
 
     def chat
-      self.class.post('/v1/chat/completions', headers: headers, body: @body.to_json)
+      self.class.post(@model_url, headers: headers, body: @body.to_json)
     end
 
     protected
