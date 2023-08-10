@@ -27,7 +27,7 @@ module EasyAccessGpt
       def settings_chat
         {
           role: 'system',
-          content: 'you are translate words and return only json'
+          content: 'you are a translator, translate and return only json'
         }
       end
 
