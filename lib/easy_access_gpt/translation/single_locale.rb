@@ -34,8 +34,7 @@ module EasyAccessGpt
       def settings_message
         {
           role: 'user',
-          content: "#{@message} translate to #{@locale} translate only values and return json,
-                    save keys, exsample answer: { locale => { key => translation }"
+          content: "#{@message} translate to #{@locale} translate only values and return json"
         }
       end
     end
