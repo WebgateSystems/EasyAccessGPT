@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    easy_access_gpt (0.1.0)
+    easy_access_gpt (0.2.0)
+      httparty (~> 0.21.0)
 
 GEM
   remote: https://rubygems.org/
@@ -14,11 +15,11 @@ GEM
     fasterer (0.9.0)
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
-    httparty (0.13.7)
-      json (~> 1.8)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    json (1.8.6)
     method_source (1.0.0)
+    mini_mime (1.1.5)
     multi_xml (0.6.0)
     parallel (1.23.0)
     parser (3.2.2.3)
@@ -84,7 +85,6 @@ PLATFORMS
 DEPENDENCIES
   easy_access_gpt!
   fasterer (~> 0.9.0)
-  httparty (~> 0.13.7)
   pry (~> 0.14.1)
   rake (~> 13.0)
   rspec (~> 3.11)

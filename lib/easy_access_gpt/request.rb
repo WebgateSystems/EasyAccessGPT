@@ -6,7 +6,7 @@ module EasyAccessGpt
 
     base_uri 'https://api.openai.com'
 
-    def initialize(body)
+    def initialize(body, _locale = :en)
       @api_key = EasyAccessGpt::Configure.api_key
       @model_url = EasyAccessGpt::Configure.model_url
       @body = body

@@ -63,13 +63,13 @@ response: 'Hello! How can I assist you today?'
 Run command: 
 
 ``` ruby
-EasyAccessGpt::Translation.new({body: 'your message'}).call
+EasyAccessGpt::Translation::ScopeLocales.new({body: 'your message'}).call
 ```
 
 Usage excample: 
 
 ``` ruby
-request: EasyAccessGpt::Translation.new({body: 'hello'}).call
+request: EasyAccessGpt::Translation::ScopeLocales.new({body: 'hello'}).call
 
 response: {"en"=>{"body"=>"hello"},
            "pl"=>{"body"=>"cześć"},
@@ -79,6 +79,18 @@ response: {"en"=>{"body"=>"hello"},
            "ru"=>{"body"=>"привет"},
            "es"=>{"body"=>"hola"},
            "it"=>{"body"=>"ciao"}}
+```
+Translation object columns with single locale:
+
+```ruby
+EasyAccessGpt::Translation::SingleLocale.new({body: 'your message'}, 'locale').call
+```
+
+Usage example:
+
+```ruby
+request: EasyAccessGpt::Translation::SingleLocales.new({body: 'hello'}, :en).call
+response: {"en"=>{"body"=>"hello"}}
 ```
 
 ### Using Gems to check text for offensive content
