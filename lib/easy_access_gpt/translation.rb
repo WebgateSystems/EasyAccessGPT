@@ -18,7 +18,8 @@ module EasyAccessGpt
     def body
       {
         model: EasyAccessGpt::Configure.gpt_model,
-        messages: [settings_chat, settings_message]
+        messages: [settings_chat, settings_message],
+        max_tokens: 3000
       }
     end
 
