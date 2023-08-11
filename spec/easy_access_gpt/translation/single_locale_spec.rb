@@ -2,12 +2,12 @@
 
 require 'spec_helper'
 
-RSpec.describe EasyAccessGpt::Translation do
+RSpec.describe EasyAccessGpt::Translation::SingleLocale do
   let(:translation) { described_class }
 
   context 'when run translate without token' do
     it 'is return operation fail' do
-      expect(translation.new('test').call[:operation]).to eql(:fail)
+      expect(translation.new('test', 'test').call[:operation]).to eql(:fail)
     end
   end
 
@@ -17,7 +17,7 @@ RSpec.describe EasyAccessGpt::Translation do
     end
 
     it 'is return operation fail' do
-      expect(translation.new('test').call[:operation]).to eql(:fail)
+      expect(translation.new('test', 'test').call[:operation]).to eql(:fail)
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe EasyAccessGpt::Translation do
     end
 
     it 'is return operation success' do
-      expect(translation.new('test').call).to eq({ 'en' => { 'text' => 'test' } })
+      expect(translation.new('test', 'test').call).to eq({ 'en' => { 'text' => 'test' } })
     end
   end
 end
