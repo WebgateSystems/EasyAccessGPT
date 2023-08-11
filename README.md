@@ -33,6 +33,12 @@ And changing the locales to which the text needs to be translated:
 EasyAccessGpt::Configure.available_locales = 'default values:  [en pl fr ua de ru es it]'
 ```
 
+Setting to increase the number of tokens in the response:
+
+```ruby
+EasyAccessGpt::Configure.max_tokens = 'default value 1000'
+```
+
 ## Initial setup without Rails:
 
 ```bash
@@ -41,6 +47,7 @@ require_relative 'lib/easy_access_gpt'
 EasyAccessGpt::Configure.api_key = 'your api key'
 EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-3.5-turbo'
 EasyAccessGpt::Configure.available_locales = 'default values:  [en pl fr ua de ru es it]'
+EasyAccessGpt::Configure.max_tokens = 'default value 1000'
 ```
 
 ## Usage
