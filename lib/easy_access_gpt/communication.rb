@@ -2,7 +2,7 @@
 
 module EasyAccessGpt
   class Communication < Request
-    def initialize(message, settings=nil)
+    def initialize(message, settings = nil)
       super
       @message = message
       @settings ||= settings_chat

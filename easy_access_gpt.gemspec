@@ -5,11 +5,12 @@ require_relative 'lib/easy_access_gpt/version'
 Gem::Specification.new do |spec|
   spec.name = 'easy_access_gpt'
   spec.version = EasyAccessGpt::VERSION.identify
-  spec.authors = ['AnySiPlusplus', 'sysadm', 'WebgateSystems']
-  spec.email = ['denis1sorokin@gmail.com', 'sladkowski@webgate.pro']
+  spec.authors = %w[AnySiPlusplus sysadm WebgateSystems]
+  spec.email = %w[denis1sorokin@gmail.com sladkowski@webgate.pro]
 
   spec.summary = 'Rubygem, created to simplify work with ChatGPT and other AI engines.'
-  spec.description = 'Gem is designed to easily enable gpt chat and other AI engines, translate text, check content for obscene language and other purpose.'
+  spec.description = "Gem is designed to easily enable gpt chat and other AI engines, translate text,
+                      check content for obscene language and other purpose."
   spec.homepage = 'https://github.com/WebgateSystems/EasyAccessGPT'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.7.0'
