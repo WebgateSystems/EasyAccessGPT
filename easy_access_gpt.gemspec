@@ -4,21 +4,21 @@ require_relative 'lib/easy_access_gpt/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'easy_access_gpt'
-  spec.version = EasyAccessGpt::VERSION
-  spec.authors = ['AnySiPlusplus']
-  spec.email = ['denis1sorokin@gmail.com']
+  spec.version = EasyAccessGpt::VERSION.identify
+  spec.authors = ['AnySiPlusplus', 'sysadm', 'WebgateSystems']
+  spec.email = ['denis1sorokin@gmail.com', 'sladkowski@webgate.pro']
 
-  spec.summary = ' Write a short summary, because RubyGems requires one.'
-  spec.description = 'Write a longer description or delete this line.'
-  spec.homepage = 'https://github.com/AnySiPlusplus'
+  spec.summary = 'Rubygem, created to simplify work with ChatGPT and other AI engines.'
+  spec.description = 'Gem is designed to easily enable gpt chat and other AI engines, translate text, check content for obscene language and other purpose.'
+  spec.homepage = 'https://github.com/WebgateSystems/EasyAccessGPT'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.7.0'
 
-  spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
+  # spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/AnySiPlusplus'
-  spec.metadata['changelog_uri'] = 'https://github.com/AnySiPlusplus'
+  spec.metadata['source_code_uri'] = 'https://github.com/WebgateSystems/EasyAccessGPT'
+  spec.metadata['changelog_uri'] = 'https://github.com/WebgateSystems/EasyAccessGPT/blob/main/CHANGELOG.md'
 
   spec.files = Dir.chdir(__dir__) do
     `git ls-files -z`.split("\x0").reject do |f|

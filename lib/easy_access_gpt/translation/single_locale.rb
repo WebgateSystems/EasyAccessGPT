@@ -27,14 +27,14 @@ module EasyAccessGpt
       def settings_chat
         {
           role: 'system',
-          content: 'you are a translator, translate and return only json'
+          content: 'you are a translator, translate and return responce as a json'
         }
       end
 
       def settings_message
         {
           role: 'user',
-          content: "#{@message} translate to #{@locale} translate only values and return json"
+          content: "This text: '#{@message}' translate to #{@locale}, translate only values and return json"
         }
       end
     end

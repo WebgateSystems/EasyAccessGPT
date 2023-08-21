@@ -26,7 +26,7 @@ module EasyAccessGpt
         role: 'system',
         content: 'you will be the moderator of the text that I will send you,
                   you will return json only if there is profanity or insults
-                  example answer: { message_include_profanity: true if there is false if not } okay?'
+                  example answer: { message_include_profanity: true if there is false if not }'
       }
     end
 

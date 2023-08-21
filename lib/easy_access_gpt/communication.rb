@@ -2,9 +2,10 @@
 
 module EasyAccessGpt
   class Communication < Request
-    def initialize(message)
+    def initialize(message, settings=nil)
       super
       @message = message
+      @settings ||= settings_chat
     end
 
     def call
@@ -21,7 +22,7 @@ module EasyAccessGpt
     def body
       {
         model: EasyAccessGpt::Configure.gpt_model,
-        messages: [settings_chat, settings_message],
+        messages: [@settings, settings_message],
         max_tokens: EasyAccessGpt::Configure.max_tokens
       }
     end

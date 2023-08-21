@@ -1,13 +1,13 @@
 # EasyAccessGpt
 
-Welcome, the 'Easy access gpt' gem is designed to easily enable gpt chat, translate text using gpt chat, and check content for obscene language.
+Welcome, the 'Easy access gpt' gem is designed to easily enable gpt chat, translate text using gpt chat, check content for obscene language and other purpose.
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
 ```bash
-gem 'easy_access_gpt', git: 'https://github.com/WebgateSystems/EasyAccessGPT.git', branch: 'develop'
+gem 'easy_access_gpt', git: 'https://github.com/WebgateSystems/EasyAccessGPT.git'
 ```
 Run the bundle command to install it.
 
@@ -30,7 +30,7 @@ EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-3.5-turbo'
 And changing the locales to which the text needs to be translated:
 
 ``` ruby
-EasyAccessGpt::Configure.available_locales = 'default values:  [en pl fr ua de ru es it]'
+EasyAccessGpt::Configure.available_locales = 'default values:  [de en es fr it pl ru ua]'
 ```
 
 Setting to increase the number of tokens in the response:
@@ -46,7 +46,7 @@ require_relative 'lib/easy_access_gpt'
 
 EasyAccessGpt::Configure.api_key = 'your api key'
 EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-3.5-turbo'
-EasyAccessGpt::Configure.available_locales = 'default values:  [en pl fr ua de ru es it]'
+EasyAccessGpt::Configure.available_locales = 'default values:  [de en es fr it pl ru ua]'
 EasyAccessGpt::Configure.max_tokens = 'default value 1000'
 ```
 
@@ -57,7 +57,7 @@ EasyAccessGpt::Configure.max_tokens = 'default value 1000'
 ``` ruby
 EasyAccessGpt::Communication.new('your message').call
 ```
-Usage excample: 
+Usage example: 
 
 ``` ruby
 request: EasyAccessGpt::Communication.new('hello').call
@@ -73,7 +73,7 @@ Run command:
 EasyAccessGpt::Translation::ScopeLocales.new({body: 'your message'}).call
 ```
 
-Usage excample: 
+Usage example: 
 
 ``` ruby
 request: EasyAccessGpt::Translation::ScopeLocales.new({body: 'hello'}).call
@@ -117,7 +117,7 @@ response: {"message_include_profanity"=>false}
 ```
 
 ```ruby
-request: EasyAccessGpt::Filter.new('text include bad words').call
+request: EasyAccessGpt::Filter.new('text included bad words, for example f@ck').call
 
 response: {"message_include_profanity"=>true}
 ```
