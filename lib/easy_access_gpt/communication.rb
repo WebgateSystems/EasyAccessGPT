@@ -2,14 +2,14 @@
 
 module EasyAccessGpt
   class Communication < Request
-    def initialize(message, settings = nil)
-      super
+    def initialize(message, **options)
+      super(nil, config: EasyAccessGpt::Configure.snapshot(**options))
       @message = message
-      @settings ||= settings_chat
+      @settings = settings_chat
     end
 
     def call
-      @answer = EasyAccessGpt::Request.new(body).chat
+      @answer = EasyAccessGpt::Request.new(body, config: @config).chat
       @answer['error'] ? fail! : response
     end
 

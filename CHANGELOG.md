@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-16
+
+- Isolate tenant API keys, models, locales, and token limits per call, thread, and fiber. Rails wraps every request in `EasyAccessGpt::Middleware`. Other Rack apps use the same middleware. Background jobs use `Configure.with_settings`.
+
 ## [0.3.0] - 2026-11-16
 
 - Require Ruby 3.3 or newer. The locked prism build installs only on 3.3 and above, so the test matrix is 3.3, 3.4, and 4.0.

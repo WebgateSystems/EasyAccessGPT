@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_access_gpt (0.3.0)
+    easy_access_gpt (0.4.0)
       base64
       bigdecimal
       csv

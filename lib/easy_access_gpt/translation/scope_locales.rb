@@ -3,14 +3,13 @@
 module EasyAccessGpt
   module Translation
     class ScopeLocales < Request
-      def initialize(message)
-        super
-        @locales = EasyAccessGpt::Configure.available_locales
+      def initialize(message, **options)
+        super(nil, config: EasyAccessGpt::Configure.snapshot(**options))
         @message = message
       end
 
       def call
-        @answer = EasyAccessGpt::Request.new(body).chat
+        @answer = EasyAccessGpt::Request.new(body, config: @config).chat
         @answer['error'] ? fail! : parse_answer
       end
 
@@ -30,8 +29,9 @@ module EasyAccessGpt
       def settings_message
         {
           role: 'user',
-          content: "This text: '#{@message}' translate to #{@locales}, translate only values but preserve keys.
-                   Example answer: { locale => { key => translation }"
+          content: "This text: '#{@message}' translate to #{@config.available_locales}, " \
+                   "translate only values but preserve keys.\n         " \
+                   'Example answer: { locale => { key => translation }'
         }
       end
     end

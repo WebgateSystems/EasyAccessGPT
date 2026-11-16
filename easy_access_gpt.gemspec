@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'Chat, translate, and moderate text through the OpenAI chat API.'
   spec.description = 'Ruby gem for chat, translation, and profanity checks via OpenAI chat completions. ' \
-                     'Defaults to gpt-5.6-terra and requires Ruby 3.3 or newer.'
+                     'Defaults to gpt-5.6-terra, requires Ruby 3.3 or newer, and keeps tenant settings on the call.'
   spec.homepage = 'https://github.com/WebgateSystems/EasyAccessGPT'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.3.0'

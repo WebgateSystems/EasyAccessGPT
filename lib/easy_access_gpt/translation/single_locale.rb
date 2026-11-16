@@ -3,14 +3,14 @@
 module EasyAccessGpt
   module Translation
     class SingleLocale < Request
-      def initialize(message, locale)
-        super
+      def initialize(message, locale, **options)
+        super(nil, config: EasyAccessGpt::Configure.snapshot(**options))
         @locale = locale
         @message = message
       end
 
       def call
-        @answer = EasyAccessGpt::Request.new(body).chat
+        @answer = EasyAccessGpt::Request.new(body, config: @config).chat
         @answer['error'] ? fail! : parse_answer
       end
 

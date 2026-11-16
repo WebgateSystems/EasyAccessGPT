@@ -2,13 +2,13 @@
 
 module EasyAccessGpt
   class Filter < Request
-    def initialize(message)
-      super
+    def initialize(message, **options)
+      super(nil, config: EasyAccessGpt::Configure.snapshot(**options))
       @message = message
     end
 
     def call
-      @answer = EasyAccessGpt::Request.new(body).chat
+      @answer = EasyAccessGpt::Request.new(body, config: @config).chat
       @answer['error'] ? fail! : parse_answer
     end
 

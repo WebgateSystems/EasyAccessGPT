@@ -6,9 +6,10 @@ module EasyAccessGpt
 
     base_uri 'https://api.openai.com'
 
-    def initialize(body, _locale = :en)
-      @api_key = EasyAccessGpt::Configure.api_key
-      @model_url = EasyAccessGpt::Configure.model_url
+    def initialize(body, config:)
+      @config = config
+      @api_key = config.api_key
+      @model_url = config.model_url
       @body = body
     end
 
@@ -20,8 +21,8 @@ module EasyAccessGpt
 
     def model_options(json: false)
       {
-        model: EasyAccessGpt::Configure.gpt_model,
-        max_completion_tokens: EasyAccessGpt::Configure.max_tokens,
+        model: @config.gpt_model,
+        max_completion_tokens: @config.max_tokens,
         reasoning_effort: 'none'
       }.tap do |options|
         options[:response_format] = { type: 'json_object' } if json
