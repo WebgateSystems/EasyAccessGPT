@@ -1,5 +1,6 @@
 # Gem checks for tracker.webgate.pro. No build and no deploy.
 # A green pipeline means every job below passed.
+# GitHub copy: .github/workflows/ci.yml
 
 stages:
   - test

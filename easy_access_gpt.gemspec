@@ -8,13 +8,13 @@ Gem::Specification.new do |spec|
   spec.authors = %w[AnySiPlusplus sysadm WebgateSystems]
   spec.email = %w[denis1sorokin@gmail.com sladkowski@webgate.pro]
 
-  spec.summary = 'Rubygem, created to simplify work with ChatGPT and other AI engines.'
-  spec.description = "Gem is designed to easily enable gpt chat and other AI engines, translate text,
-                      check content for obscene language and other purpose."
+  spec.summary = 'Chat, translate, and moderate text through the OpenAI chat API.'
+  spec.description = 'Ruby gem for chat, translation, and profanity checks via OpenAI chat completions. ' \
+                     'Defaults to gpt-5.6-terra and requires Ruby 3.3 or newer.'
   spec.homepage = 'https://github.com/WebgateSystems/EasyAccessGPT'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.3.0'
-  # Oldest Ruby the locked native gems install on. Keep .gitlab-ci.yml in step.
+  # Oldest Ruby the locked native gems install on. Keep .gitlab-ci.yml and .github/workflows/ci.yml in step.
   spec.metadata['supported_ruby_versions'] = '3.3, 3.4, 4.0'
 
   # spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
