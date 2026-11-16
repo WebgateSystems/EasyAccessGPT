@@ -24,7 +24,7 @@ EasyAccessGpt::Configure.api_key = 'your api key'
 There is also a chat search model setting gpt
 
 ``` ruby
-EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-3.5-turbo'
+EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-5.6-terra'
 ```
 
 And changing the locales to which the text needs to be translated:
@@ -45,7 +45,7 @@ EasyAccessGpt::Configure.max_tokens = 'default value 1000'
 require_relative 'lib/easy_access_gpt'
 
 EasyAccessGpt::Configure.api_key = 'your api key'
-EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-3.5-turbo'
+EasyAccessGpt::Configure.gpt_model = 'default value:  gpt-5.6-terra'
 EasyAccessGpt::Configure.available_locales = 'default values:  [de en es fr it pl ru ua]'
 EasyAccessGpt::Configure.max_tokens = 'default value 1000'
 ```

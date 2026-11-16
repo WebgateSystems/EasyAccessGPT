@@ -17,11 +17,7 @@ module EasyAccessGpt
       private
 
       def body
-        {
-          model: EasyAccessGpt::Configure.gpt_model,
-          messages: [settings_chat, settings_message],
-          max_tokens: EasyAccessGpt::Configure.max_tokens
-        }
+        model_options(json: true).merge(messages: [settings_chat, settings_message])
       end
 
       def settings_chat

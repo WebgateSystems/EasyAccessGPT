@@ -13,7 +13,9 @@ Gem::Specification.new do |spec|
                       check content for obscene language and other purpose."
   spec.homepage = 'https://github.com/WebgateSystems/EasyAccessGPT'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 2.7.0'
+  spec.required_ruby_version = '>= 3.2.0'
+  # Oldest Ruby the patched dependencies still install on. Keep .gitlab-ci.yml in step.
+  spec.metadata['supported_ruby_versions'] = '3.2, 3.3, 3.4, 4.0'
 
   # spec.metadata['allowed_push_host'] = "TODO: Set to your gem server 'https://example.com'"
 
@@ -31,9 +33,17 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_development_dependency 'benchmark', '~> 0.4'
+  spec.add_development_dependency 'brakeman', '~> 8.0'
+  spec.add_development_dependency 'bundler-audit', '~> 0.9.2'
   spec.add_development_dependency 'fasterer', '~> 0.9.0'
-  spec.add_runtime_dependency 'httparty', '~> 0.21.0'
-  spec.add_development_dependency 'pry', '~> 0.14.1'
+  spec.add_runtime_dependency 'httparty', '~> 0.24.0'
+  # Former default libraries. Ruby 4 only loads them when the gem declares them.
+  spec.add_runtime_dependency 'base64'
+  spec.add_runtime_dependency 'bigdecimal'
+  spec.add_runtime_dependency 'csv'
+  spec.add_runtime_dependency 'rexml', '>= 3.3.9', '< 4'
+  spec.add_development_dependency 'pry', '~> 0.16.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.11'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.5.1'

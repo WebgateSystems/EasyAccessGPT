@@ -13,13 +13,27 @@ module EasyAccessGpt
     end
 
     def chat
-      self.class.post(@model_url, headers: headers, body: @body.to_json)
+      self.class.post(@model_url, headers:, body: @body.to_json)
     end
 
     protected
 
+    def model_options(json: false)
+      {
+        model: EasyAccessGpt::Configure.gpt_model,
+        max_completion_tokens: EasyAccessGpt::Configure.max_tokens,
+        reasoning_effort: 'none'
+      }.tap do |options|
+        options[:response_format] = { type: 'json_object' } if json
+      end
+    end
+
+    def message_content
+      @answer.dig('choices', 0, 'message', 'content')
+    end
+
     def parse_answer
-      JSON.parse(@answer.dig('choices', 0, 'message', 'content'))
+      JSON.parse(message_content)
     end
 
     def fail!
@@ -30,7 +44,7 @@ module EasyAccessGpt
 
     def headers
       {
-        'Authorization': "Bearer #{@api_key}",
+        Authorization: "Bearer #{@api_key}",
         'Content-Type': 'application/json'
       }
     end

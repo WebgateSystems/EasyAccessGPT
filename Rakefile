@@ -7,8 +7,8 @@ require 'github_changelog_generator/task'
 GitHubChangelogGenerator::RakeTask.new :changelog do |config|
   config.user = 'WebgateSystems'
   config.project = 'EasyAccessGPT'
-  config.since_tag = '0.2.2'
-  config.future_release = '1.0.0'
+  config.since_tag = '0.3.0'
+  config.future_release = '0.4.0'
 end
 
 RSpec::Core::RakeTask.new(:spec)

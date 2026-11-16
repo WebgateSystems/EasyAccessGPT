@@ -15,26 +15,22 @@ module EasyAccessGpt
     private
 
     def body
-      {
-        model: EasyAccessGpt::Configure.gpt_model,
-        messages: [settings_chat, settings_message]
-      }
+      model_options(json: true).merge(messages: [settings_chat, settings_message])
     end
 
     def settings_chat
       {
         role: 'system',
-        content: 'you will be the moderator of the text that I will send you,
-                  you will return json only if there is profanity or insults
-                  example answer: { message_include_profanity: true if there is false if not }'
+        content: 'You moderate text and return json only. ' \
+                 'Set message_include_profanity to true when the text contains profanity or insults, ' \
+                 'otherwise false. Example: {"message_include_profanity": false}'
       }
     end
 
     def settings_message
       {
         role: 'user',
-        content: "text: #{@message}, return only json without comments,
-                  example answer: { message_include_profanity: true if there is false if not } okay?"
+        content: "text: #{@message}. Return json only, for example {\"message_include_profanity\": false}."
       }
     end
   end
