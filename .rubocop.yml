@@ -1,5 +1,6 @@
 AllCops:
   NewCops: enable
+  # RuboCop 1.31 only knows versions through 3.2. The gem itself requires 3.3.
   TargetRubyVersion: 3.2
 
 Style/Documentation:
@@ -10,6 +11,10 @@ Lint/DuplicateMethods:
     - 'lib/**/configure.rb'
 
 Gemspec/RequireMFA:
+  Enabled: false
+
+# RuboCop 1.31 cannot set TargetRubyVersion to 3.3, so this cop cannot match required_ruby_version.
+Gemspec/RequiredRubyVersion:
   Enabled: false
 
 Metrics/BlockLength:

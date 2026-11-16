@@ -6,6 +6,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+/logs/
 .idea
 .ruby-gemset
 .ruby-version

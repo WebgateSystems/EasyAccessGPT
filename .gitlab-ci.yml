@@ -72,7 +72,7 @@ brakeman:
   script:
     - bundle exec brakeman --force-scan --quiet --no-pager --exit-on-warn --exit-on-error
 
-# Ruby 3.1 and older are unsupported: the patched gems require 3.2.
+# Ruby 3.2 and older are unsupported: the locked prism build requires 3.3.
 rspec:
   extends: .ruby_setup
   stage: test
@@ -80,7 +80,6 @@ rspec:
   parallel:
     matrix:
       - RUBY_IMAGE:
-          - "3.2-bookworm"
           - "3.3-bookworm"
           - "3.4-bookworm"
           - "4.0.6-bookworm"
